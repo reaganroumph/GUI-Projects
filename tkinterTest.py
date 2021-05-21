@@ -4,6 +4,8 @@ import random
 top = Tk()
 playlist = []
 myRolls = []
+myList = []
+
 
 def printList():
     print(playlist)
@@ -28,7 +30,7 @@ def mainMenu():
     B2Main = Button(text = "week 2", bg = "#946f92", command = week2)
     B2Main.grid(column = 0, row = 3)
     
-    B3Main = Button(text = "week 3", bg = "#946f92")
+    B3Main = Button(text = "week 3", bg = "#946f92", command = week3)
     B3Main.grid(column = 0, row = 4)
 
     top["background"]="#6f946f"
@@ -87,6 +89,8 @@ def week2():
         B1RD.grid(column= 0, row= 3)
 
         
+
+        
     clearWindow()
 
     L1W2 = Label(top, text = "Dice Roller App")
@@ -107,6 +111,40 @@ def week2():
     B1W2 = Button(text = "Roll 'em", bg = "#6e0868", fg = "white", command = rollDice)
     B1W2.grid(column = 2, row = 4)
 
+    B2W2 = Button(text = "Main Menu", bg = "#946f92", command = mainMenu)
+    B2W2.grid(column = 2, row = 5)
+
+def week3():
+    def groceryList():
+        print("delete this")
+        
+    clearWindow()
+
+    L3W3 = Label(top, text = "Grocery List")
+    L3W3.grid(column = 0, row = 1)
+
+    E3W3 = Entry(top, bg = "#946f92")
+    E3W3.grid(column = 0, row = 2)
+
+    def addToList():
+        myList.append(E3W3.get())
+        E3W3.delete(0, END)
+        
+    B1W3 = Button (text= "Main Menu", bg = "#946f92", command = mainMenu)
+    B1W3.grid(column= 0, row= 5)
+
+    B2W3 = Button (text = "add to list", bg = "#946f92", command = addToList)
+    B2W3.grid(column = 0, row = 3)
+
+    def showList():
+        print(myList)
+
+    B3W3 = Button (text = "print", bg = "#946f92", command = showList)
+    B3W3.grid(column = 0, row = 4)
+
+        
+
+        
 
 
 
